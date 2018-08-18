@@ -17,18 +17,8 @@ Template.body.helpers({
 Template.body.events({
  'submit .new-items'(event) {
     event.preventDefault();
-    Items.insert({
-      itemOne: {
-        text: event.target.item1.value,
-        value: 0
-      },
-      itemTwo: {
-        text: event.target.item2.value,
-        value: 0
-      }
-    });
+    Meteor.call('createNewItem', event.target.item1.value, event.target.item2.value );
     event.target.item1.value = '';
     event.target.item2.value = '';
-    console.log(event.target.item1.value);
  }
-})
+});
