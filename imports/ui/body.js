@@ -11,7 +11,10 @@ Template.body.onCreated(function() {
 
 Template.body.helpers({
   items() {
-    return Items.find({});
+    return Items.find({}, {
+      limit: 1,
+      sort: { lastUpdated: 1 }
+    });
   },
   loggedIn() {
     return Meteor.userId();
