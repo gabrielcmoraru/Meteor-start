@@ -22,3 +22,7 @@ accounts-ui
 accounts-password
 reactive-dict
 session
+facebook-config-ui
+accounts-facebook
+accounts-google
+google-config-ui
