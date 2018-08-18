@@ -1,9 +1,9 @@
-<body>
+<body >
   <header>
     <h1>Voting App</h1>
     {{> loginButtons}}
   </header>
-  <main>
+  <main style='background: {{bgColor}};'>
     {{#if showForm}}
       {{#if loggedIn}}
         <form class="new-items">

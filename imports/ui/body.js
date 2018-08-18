@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
+import { Session } from 'meteor/session';
 
 import Items  from '../api/items.js';
 
@@ -24,11 +25,15 @@ Template.body.helpers({
   showForm() {
     const instance = Template.instance();
     return instance.state.get('showForm');
+  },
+  bgColor() {
+    return Session.get('bgColor');
   }
 });
 
 Template.body.events({
   'click .show-form'(event, instance) {
+    Session.set('bgColor', 'green');
     instance.state.set('showForm', true);
   },
  'submit .new-items'(event, instance) {
