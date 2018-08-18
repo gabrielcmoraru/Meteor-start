@@ -8,6 +8,9 @@ import './item.js';
 Template.body.helpers({
   items() {
     return Items.find({});
+  },
+  loggedIn() {
+    return Meteor.userId();
   }
 });
 
