@@ -1,2 +1,13 @@
+import { Template } from 'meteor/templating';
+
 import './body.html';
-import './test.html';
+
+Template.body.helpers({
+  hello: 'Hi people'
+});
+
+Template.body.events({
+  'click .test'(event) {
+    console.log('hello');
+  }
+})
