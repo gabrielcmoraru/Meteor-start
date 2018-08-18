@@ -17,8 +17,13 @@ Template.body.helpers({
 Template.body.events({
  'submit .new-items'(event) {
     event.preventDefault();
-    Meteor.call('createNewItem', event.target.item1.value, event.target.item2.value );
-    event.target.item1.value = '';
-    event.target.item2.value = '';
+    Meteor.call('createNewItem', event.target.item1.value, event.target.item2.value, (err, res) => {
+      if (err) {
+        console.log(err);
+      } else {
+        event.target.item1.value = '';
+        event.target.item2.value = '';
+      }
+    });
  }
 });
